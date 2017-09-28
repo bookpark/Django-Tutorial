@@ -15,4 +15,4 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'설문조사 ({Question.title}) - 선택지 ({self.title})'
+        return f'{self.title} (설문: {self.question.title})'
