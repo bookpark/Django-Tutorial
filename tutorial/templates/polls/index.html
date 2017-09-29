@@ -2,7 +2,13 @@
 {% block content %}
     {% if questions %}
         {% for question in questions %}
-            <h2><a href="{% url 'detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <table class="table table-stripped table-bordered">
+                <tr>
+                    <td>
+                        <h2><a href="{% url 'detail' pk=question.pk %}">{{ question.title }}</a></h2>
+                    </td>
+                </tr>
+            </table>
         {% endfor %}
     {% else %}
         <p>No polls are available.</p>
