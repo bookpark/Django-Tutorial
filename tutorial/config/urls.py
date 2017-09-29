@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
     url(r'^polls/(?P<pk>\d+)/$', detail, name='detail'),
-    url(r'^polls/(?P<pk>\d+)/results/$', results),
     url(r'^polls/(?P<pk>\d+)/vote/$', vote, name='vote'),
+    url(r'^polls/(?P<pk>\d+)/results/$', results),
     url(r'^static/', static_file),
 ]
