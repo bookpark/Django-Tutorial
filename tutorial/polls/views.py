@@ -5,9 +5,9 @@ from .models import Question
 
 
 def index(request):
-    question_list = Question.objects.order_by('-published_date')
+    questions = Question.objects.all()
     context = {
-        'question_list': question_list,
+        'questions': questions,
     }
     return render(request, 'polls/index.html', context)
 
