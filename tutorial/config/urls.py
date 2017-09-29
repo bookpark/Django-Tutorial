@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from config.views import static_file
 from polls.views import index, detail, results, vote
 
 app_name = 'polls'
@@ -24,5 +25,6 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^polls/(?P<pk>\d+)/$', detail, name='detail'),
     url(r'^polls/(?P<pk>\d+)/results/$', results),
-    url(r'^polls/(?P<pk>\d+)/vote/$', vote, name='vote')
+    url(r'^polls/(?P<pk>\d+)/vote/$', vote, name='vote'),
+    url(r'^static/', static_file),
 ]
