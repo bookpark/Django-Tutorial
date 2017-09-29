@@ -5,10 +5,13 @@
         <form action="{% url 'vote' pk=question.pk %}" method="post">
             {% csrf_token %}
             {% for choice in question.choice_set.all %}
-                {#            <div class="radio">#}
-                {#                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="choice.pk">#}
-                {#                <label for="choice{{ forloop.counter }}">{{ choice.title }}</label>#}
-                {#            </div>#}
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="choice" value="{{ choice.pk }}">
+                        <strong>{{ choice.title }}</strong>
+                        <strong>{{ choice.votes }}</strong>
+                    </label>
+                </div>
             {% endfor %}
             <input type="submit" value="투표하기">
         </form>
